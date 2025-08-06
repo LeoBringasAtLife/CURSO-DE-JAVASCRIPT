@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* background-color: #f5f5f5;
+            color: #333; */
+        }
+    </style>
+</head>
+
+<!-- SetTimeOut() = Ejecuta una función una sola vez después de un retraso-->
+<!-- SetInterval() = Ejecuta una función repetidamente, cada cierto intervalo-->
+<!-- ClearTimeOut ?? -->
+<!-- ClearInterval() ?? -->
+
+<body>
+    <script>
+        // Manera 1:
+        // setTimeout(() => {
+        //     document.write("hola");
+        // }, 2000);
+
+        // Manera 2:
+        // const saludar = () => {
+        //     document.write("hola");
+        // }
+        // setTimeout(saludar, 2000);
+
+        // Manera 3: esto nunca se va a ejecutar (no aparece) "SetTimeOut()"
+        // const temporizador = setTimeout(() => {
+        //     document.write("hola");
+        // }, 2000);
+
+        // clearTimeout(temporizador)
+
+        // SetInterval()
+        // setInterval(() => {
+        //     document.write("hola");
+        // }, 500);
+
+        const intervalo = setInterval(() => {
+            document.write("hola");
+        }, 1000); // En la consola del navegador ejecutas "(clearInterval(intervalo))"
+
+        // clearInterval(intervalo) 
+
+        setTimeout(() => {
+            clearInterval(intervalo)
+        }, 5000)
+    </script>
+</body>
+
+</html>

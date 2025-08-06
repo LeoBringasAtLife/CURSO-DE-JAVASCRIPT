@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema de Cofla (B)</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-rows: 50px;
+            grid-template-columns: repeat(4, minmax(min-content, max-content));
+            grid-auto-rows: 50px;
+        }
+
+        .grid-container .grid-item {
+            padding: 10px;
+            border: 1px solid #000;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="grid-container">
+        <div class="grid-item nombre">Leonardo Bringas</div>
+        <div class="grid-item email">leobringas@gmail.com</div>
+        <div class="grid-item materia">Matemática 3</div>
+        <div class="grid-item semana">
+            <select class="semana-elegida">
+                <option value="1">Semana 1</option>
+                <option value="2">Semana 2</option>
+                <option value="2">Semana 3</option>
+                <option value="2">Semana 4</option>
+                <option value="2">Semana 5</option>
+            </select>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item nombre">Camila Fernández</div>
+        <div class="grid-item email">camifer@example.com</div>
+        <div class="grid-item materia">Historia Argentina</div>
+        <div class="grid-item semana">
+            <select class="semana-elegida">
+                <option value="1">Semana 1</option>
+                <option value="2">Semana 2</option>
+                <option value="2">Semana 3</option>
+                <option value="2">Semana 4</option>
+                <option value="2">Semana 5</option>
+            </select>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item nombre">Tomás Herrera</div>
+        <div class="grid-item email">tomi.herrera@example.com</div>
+        <div class="grid-item materia">Geografía</div>
+        <div class="grid-item semana">
+            <select class="semana-elegida">
+                <option value="1">Semana 1</option>
+                <option value="2">Semana 2</option>
+                <option value="2">Semana 3</option>
+                <option value="2">Semana 4</option>
+                <option value="2">Semana 5</option>
+            </select>
+        </div>
+    </div>
+
+
+    <script>
+        const alumnos = [
+            {
+                nombre: "Leonardo Bringas",
+                email: "leobringas@gmail.com",
+                materia: "Matemática 3"
+            },
+            {
+                nombre: "Camila Fernández",
+                email: "camifer@example.com",
+                materia: "Historia Argentina"
+            },
+            {
+                nombre: "Matías Gómez",
+                email: "mati.gomez@mail.com",
+                materia: "Biología"
+            },
+            {
+                nombre: "Valentina Ríos",
+                email: "valen.rios@mail.com",
+                materia: "Física"
+            },
+            {
+                nombre: "Tomás Herrera",
+                email: "tomi.herrera@example.com",
+                materia: "Geografía"
+            },
+            {
+                nombre: "Sofía Márquez",
+                email: "sofia.mqz@mail.com",
+                materia: "Lengua y Literatura"
+            },
+            {
+                nombre: "Facundo Pérez",
+                email: "facuperez@example.com",
+                materia: "Química"
+            },
+            {
+                nombre: "Julieta Castro",
+                email: "julicas@mail.com",
+                materia: "Educación Cívica"
+            },
+            {
+                nombre: "Luciano Díaz",
+                email: "luciano.dz@gmail.com",
+                materia: "Informática"
+            },
+            {
+                nombre: "Martina López",
+                email: "martina.lopez@mail.com",
+                materia: "Filosofía"
+            },
+            {
+                nombre: "Agustín Romero",
+                email: "agusromero@example.com",
+                materia: "Matemática 2"
+            },
+            {
+                nombre: "Bianca Torres",
+                email: "biancatorres@gmail.com",
+                materia: "Economía"
+            },
+            {
+                nombre: "Ezequiel Ruiz",
+                email: "eze.ruiz@mail.com",
+                materia: "Educación Física"
+            },
+            {
+                nombre: "Renata Sánchez",
+                email: "renasanchez@example.com",
+                materia: "Arte"
+            }
+        ];
+
+        for (alumno in alumnos) {
+            for (datos in alumnos[alumno]) {
+                console.log(alumnos[alumno][datos])
+            }
+        }
+
+    </script>
+</body>
+
+</html>

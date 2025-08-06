@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema de Cofla (A)</title>
+    <!-- Hecho con Dalto, especialmente en el "Curso de JavaScript" (mi versión) veanse los cursos de HTML y CSS (muy recomendado) -->
+    <style>
+        body {
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 40px 10px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #3e6d7e;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border: 1px solid #3e6d7e;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4e8397;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 30px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e6d7e;
+        }
+
+        /* input::placeholder {
+            transition: opacity .3s ease;
+        }
+
+        input:focus::placeholder {
+            opacity: 0.5;
+        } */
+
+        .green {
+            color: #479647;
+        }
+
+        .red {
+            color: #964747;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form autocomplete="off">
+        <h2>INSCRIPCIONES</h2>
+        <input type="text" placeholder="Nombre Completo" id="nombre" required>
+        <input type="email" placeholder="Email" id="email" required>
+        <input type="text" placeholder="Materias Adeudadas" id="materia" required>
+        <input type="submit" value="Solicitar Mesa" id="btn-enviar">
+        <div class="resultados"></div>
+    </form>
+
+    <script>
+        const nombre = document.getElementById("nombre");
+        const email = document.getElementById("email");
+        const materia = document.getElementById("materia");
+        const boton = document.getElementById("btn-enviar");
+        const resultado = document.querySelector(".resultados");
+
+        // boton .addEventListener("click", () => {
+        //     alert("Hola")
+        // })
+
+        boton.addEventListener("click", (e) => {
+            e.preventDefault();
+            let error = validarCampos();
+            if (error[0]) {
+                resultado.innerHTML = error[1];
+                resultado.classList.add("red")
+            } else {
+                resultado.innerHTML = "¡Formulario enviado correctamente!";
+                resultado.classList.add("green")
+                resultado.classList.remove("red")
+            }
+        });
+
+        const validarCampos = () => {
+            let error = [];
+
+            if ((nombre.value.length < 5) || (nombre.value.length > 40)) {
+                error[0] = true;
+                error[1] = "El nombre es invalido";
+                return error;
+            } else if (
+                email.value.length < 5 ||
+                email.value.length > 40 ||
+                email.value.indexOf("@") == -1 ||
+                email.value.indexOf(".") == -1
+            ) {
+                error[0] = true;
+                error[1] = "El email no es válido.";
+                return error;
+            } else if (materia.value < 4 || materia.value > 40)  {
+                error[0] = true;
+                error[1] = "La materia no existe";
+            }
+            error[0] = false;
+            return error;
+        }
+    </script>
+</body>
+
+</html>

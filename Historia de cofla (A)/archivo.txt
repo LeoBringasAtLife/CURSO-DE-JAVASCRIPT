@@ -1,0 +1,5 @@
+PROBLEMA A
+
+- Contener Nombre, Email y Materias adeudada
+- Validar Emails y Nombres
+- Enviar al servidor de manera pulida

@@ -1,0 +1,6 @@
+PROBLEMAS B
+
+- Intefaz de atractiva y amigable
+- Contener datos de manera estructurada
+- Poder elegir cuando rinde
+- Deben actualizar y reemplazar

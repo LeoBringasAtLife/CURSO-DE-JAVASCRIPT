@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteface Events</title>
+
+    <style>
+        .seleccionado {
+            color: red;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="https://dummyimage.com/250x250/cccccc/000000&text=image" class="img">
+
+    <a href="https://youtube.com" target="_blank">Ir a YouTube</a>
+
+    <input type="text" class="input">
+    <div class="seleccionado"></div>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates deleniti quis sint, vero rem optio
+        blanditiis totam et quas labore facilis non iure. Excepturi doloremque similique amet illo repellendus enim.
+        <!-- poner muchos lorem para que probar el scroll -->
+    </p>
+
+
+    <!-- Error = Ocurre cuando sucede un ERROR durante la carga de un archivo multimedia -->
+    <!-- Load = Ocurre cuando un OBJETO se ha cargado -->
+    <!-- Beforeunload = Ocurre ANTES de que el documento esté a punto de descargarse -->
+    <!-- Unload = Ocurre una vez que se ha DESCARGADO una página -->
+    <!-- Resize = Ocurre cuando se CAMBIA el tamaño de la vista del documento -->
+    <!-- Scroll = Ocurre cuando se DESPLAZA la barra de desplazamiento de un elemento -->
+    <!-- Select = Ocurre después de que el usuario SELECCIONA algún texto de <input> o <textarea> -->
+
+    <!-- los ARRAYS son herramientas esenciales en programación para trabajar con colecciones de datos de manera estructurada y eficiente.  -->
+
+    <script>
+        // const img = document.querySelector("img");
+
+        // Error:
+        // img.addEventListener("error", () => {
+        //     console.log("Ha sucesido un gran error")
+        // });
+
+        // Load:
+        // window.addEventListener("load", () => {
+        //     console.log("Cargo el Body");
+        // });
+
+        // Beforeunload y UnLoad:
+        // addEventListener("beforeunload", () => {
+        //     console.log("te estas por ir de la web")
+        // })
+
+        // Resize:
+        // addEventListener("resize", () => {
+        //     console.log("Cambiando la resolucion de la pagina")
+        // })
+
+        // Scroll:
+        // addEventListener("scroll", () => {
+        //     console.log("¡¡Se hizo scroll!!")
+        // })
+
+        // Select:
+        // const input = document.querySelector(".input");
+        // const contenedor = document.querySelector(".seleccionado");
+
+        // input.addEventListener("select", (e) => {
+        //     let start = e.target.selectionStart;
+        //     let end = e.target.selectionEnd;
+        //     let textoCompleto = input.value;
+        //     contenedor.innerHTML = textoCompleto.substring(start, end);
+        // });
+
+        // Selecciono la ultima letra usada 
+        const input = document.querySelector(".input");
+        const contenedor = document.querySelector(".seleccionado");
+
+        input.addEventListener("keyup", (e) => {
+            let tecla = e.key;
+            let nuevoContenido = `La última letra presionada fue: <b>${tecla}</b>`;
+            contenedor.innerHTML = nuevoContenido;
+        });
+    </script>
+
+</body>
+
+</html>

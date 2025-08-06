@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Events</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .input {
+            border: 1px solid #000;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+        }
+
+        .input:focus {
+            border-color: #000000;
+        }
+    </style>
+</head>
+
+<!-- KeyDown = Ocurre cuadno una tecla se deja de PRESIONAR -->
+<!-- KeyPress = Ocurre cuando una tecla se presiona y suelta en un elemento (esta "OBSOLETO" para los navegadores modernos)-->
+<!-- KeyUp = Ocurre despues de que los dos eventos anteriores hayan concuido consecutivamente -->
+
+<!-- keyup es un evento JavaScript que se utiliza para detectar cuando se suelta una tecla, lo que permite responder a la entrada del teclado de forma dinámica.  -->
+
+<!-- keydown es un evento crucial para detectar cuándo se presiona una tecla en JavaScript, proporcionando información valiosa sobre la interacción del usuario con el teclado.  -->
+
+<!-- keypress esta obsoleto -->
+
+<body>
+    <div>
+        <input type="text" class="input">
+    </div>
+
+    <script>
+        const input = document.querySelector(".input");
+
+        input.addEventListener("keydown", (e) => {
+            console.log("una tecla fue presioanda")
+        })
+
+        // input.addEventListener("keypress",(e) => {
+        //     console.log("un usuario presiono la tecla y la soltó")
+        // })
+
+        // input.addEventListener("keypress", function (e) {
+        //     console.log("Presionaste la tecla: " + e.key);
+        // }); // Ejemplo de uso clásico, te detecta una tecla presionada, increible (escrito en el año 2025)
+
+        input.addEventListener("keyup", (e) => {
+            console.log("una tecla fue soltada")
+        })
+    </script>
+</body>
+
+</html>
