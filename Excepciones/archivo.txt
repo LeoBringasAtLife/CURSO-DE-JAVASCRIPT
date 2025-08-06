@@ -1,0 +1,14 @@
+CAPITULO 10
+
+1- Excepciones y tipos de Excepciones:
+- Definicion y usos
+- Excepciones ECMAScript
+- DOMException  y DOMError
+
+
+2- Try... Catch:
+- Sintasix 
+- Objeto Error
+- Catch Incondicional
+- Catch Condicional
+- Sentenicia Throw

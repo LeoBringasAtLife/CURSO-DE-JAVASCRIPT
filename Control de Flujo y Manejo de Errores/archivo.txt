@@ -1,0 +1,12 @@
+CAPÍTULO 10 – Control de Flujo y Manejo de Errores
+ 
+
+Control de Flujo y Manejo de Errores
+- Sentencias de Bloque
+- Sentencias de Control de Flujo.
+- Sentencias de Manejo de Excepciones.
+
+Sentencias Switch
+- Sintaxis y Clausula Case
+- Break
+- Default
