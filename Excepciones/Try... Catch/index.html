@@ -10,16 +10,125 @@
 <body>
     <script>
 
+        // try {bla}
+        // catch(error) {
+        //     console.log(typeof error)
+        // } // Con esto controlamos un error por lo que entendí
+
+        // try {
+        //     let x = y + 1 // no está definida, por lo cual genera un "ReferenceError"
+        // } catch (error) {
+        //     console.log("Nombre del error:", error.name); // referenceError
+        //     console.log("Mensaje: ", error.message);      // y is not defined
+        //     console.log("Stack trace",error.stack);       // donde ocurrió el error?
+        // }
+
         // Expresion:
+        // try {
+        //     blablabla
+        // } catch (error) {
+        //     console.log(typeof error); // "object"
+        //     console.log(typeof 123); // "number"
+        //     console.log(typeof true); // "boolean"
+        //     console.log(typeof "texto"); // "string"
+        //     console.log("hubo una error, perdon");
+        // }
+
+        // try {
+
+        // } catch (error) {
+        //     console.log("¡¡Un fallo en el sistema maestro!!"); // Catch Incondicional
+        // }
+
+        // try {
+        //     blablabla
+        // } catch (error) {
+        //     if (3 > 3) {
+        //         console.log("Error en el sistema Master");
+        //     } else {
+        //         console.log("hoolaa")
+        //     }
+        // }
+
+        // Catch Incondicional:
+
+        // try {
+        //     fsfsf  // genera un error
+        // } catch (error) {
+        //     if (3 * 5) {    // 3*5 = 15
+        //         console.log("Ha ocurrido un error");
+        //     } else {
+        //         console.log("Hola");
+        //     }
+
+        // // Finally:
+
+        // } finally {
+        //     console.log("Se muestra")
+        // }
+
+        // Catch Condicional:
+
+        // try {
+        //     let num = 10;
+        //     let result = num.toUpperCase(); // Error porque toUpperCase no existe en números
+        // } catch (error) {
+        //     if (error instanceof TypeError) {
+        //         console.log("Error: Tipo incorrecto");
+        //     } else {
+        //         console.log("Error desconocido");
+        //     }
+        // }
+
+        // Titulo:
+
+        // const pruebaTry = () => {
+        //     try {
+        //         return 1;
+        //     }
+        //     catch (error) {
+        //         return 2;
+        //     }
+        //     finally {
+        //         return 3;
+        //     }
+        // }
+
+        // console.log(pruebaTry());
+
+        // ¿Cuando usar Try, Catch, Finally?
+
+
+        // Throw:
+
+        // try {
+        //     throw "Pene";
+        // }
+        // catch(e) {
+        //     console.log(e)}
+        // finally {}
+
+
         try {
-            blablabla
-        } catch (error) {
-            console.log(typeof error); // "object"
-            console.log(typeof 123); // "number"
-            console.log(typeof true); // "boolean"
-            console.log(typeof "texto"); // "string"
-            console.log("hubo una error, perdon");
-        }
+            throw {
+                Error: "NombreDelError",
+                Info: "Descripcion del Error"
+            };
+        } catch (e) {
+            console.log(e.Error);
+            console.log(e.Info);
+        } finally { }
+
+        try {
+            throw ["Pedro", "Jose", "Leo", "Pepito"];
+        } catch (e) {
+            console.log(e);
+            // O acceder a elementos específicos:
+            console.log(e[0]);     // Pedro
+            console.log(e[1]);     // Jose
+            console.log(e[2]);     // Leo
+            console.log(e[3]);     // Pepito
+        } finally {}
 
 
 

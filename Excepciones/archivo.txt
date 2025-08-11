@@ -12,3 +12,4 @@ CAPITULO 10
 - Catch Incondicional
 - Catch Condicional
 - Sentenicia Throw
+- Finally

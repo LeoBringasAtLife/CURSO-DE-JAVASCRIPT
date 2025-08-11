@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de Cofla 4</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .form-notas {
+            width: 100%;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 25px;
+            text-align: center;
+            background-color: #121212;
+        }
+
+        .form-notas h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .form-notas input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid transparent;
+            outline: none;
+            font-size: 16px;
+            background-color: #f1f1f1;
+        }
+
+        .form-notas input[type="button"] {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: rgb(18, 33, 173);
+            color: rgb(255, 255, 255);
+            border: none;
+        }
+
+        .form-notas input[type="button"]:hover {
+            background-color: rgb(25, 45, 200);
+        }
+
+        .modal-background {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .modal {
+            background-color: #FFF;
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .resultado {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .red {
+            color: rgba(255, 0, 0, 0.781);
+        }
+
+        .green {
+            color: rgba(0, 255, 0.781);
+        }
+
+        @keyframes aparecer {
+            0% {
+                opacity: 0;
+                display: flex;
+            }
+
+            100% {
+                opacity: 1;
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal-background">
+        <div class="modal">
+            <h3 class="resultado">Modal</h3>
+            <p class="mensaje">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, iusto nisi?
+                Repellendus ipsa maiores a, doloremque, ipsum totam magni dolore sed sint deserunt omnis hic adipisci,
+                aperiam voluptatum nostrum id.</p>
+        </div>
+    </div>
+    <form class="form-notas">
+        <h2>Introducir nota del alumno</h2>
+        <input type="number" id="nota" placeholder="Escribe la calificación:" min="1" max="10">
+        <input type="button" id="snd-nota" value="Enviar nota">
+    </form>
+
+    <script>
+        const sendButton = document.getElementById('snd-nota');
+
+        sendButton.addEventListener("click", () => {
+            const valorInput = document.getElementById('nota').value;
+            const resultado = parseInt(valorInput);
+
+            if (isNaN(resultado) || resultado < 1 || resultado > 10) {
+                abrirModal("Valor inválido", "Por favor, ingresa un número válido entre 1 y 10.");
+                return;
+            }
+
+            const [mensajeTexto, notaParaPromedio] = prevRes(resultado);
+            const estado = verificarAprobacion(notaParaPromedio, 5, 7); // podes cambiar las otras notas
+            const mensajeFinal = mensajeTexto + " - " + estado;
+
+            abrirModal(resultado, mensajeFinal);
+        });
+
+        const prevRes = (pr) => {
+            switch (pr) {
+                case 1:
+                case 2:
+                case 3:
+                    return ["Muy bajo, necesitas esforzarte más", pr];
+                case 4:
+                case 5:
+                case 6:
+                    return ["Regular, hay que mejorar", pr];
+                case 7:
+                case 8:
+                    return ["Bien, estás aprobado", pr];
+                case 9:
+                    return ["Muy bien", pr];
+                case 10:
+                    return ["Excelente", pr];
+                default:
+                    return ["Nota no contemplada.", 0];
+            }
+        };
+
+        const verificarAprobacion = (nota1, nota2, nota3) => {
+            const promedio = (nota1 + nota2 + nota3) / 3;
+            if (promedio >= 7) {
+                return "<span class='green'>Aprobado</span>";
+            }
+            return "<span class='red'>Desaprobado</span>";
+        };
+
+        const abrirModal = (res, msg) => {
+            document.querySelector(".resultado").innerHTML = res;
+            document.querySelector(".mensaje").innerHTML = "Tu prueba: " + msg;
+
+            const modal = document.querySelector(".modal-background");
+            modal.style.display = "flex";
+            modal.style.animation = "aparecer 1s forwards";
+        };
+
+        
+    </script>
+
+</body>
+
+</html>

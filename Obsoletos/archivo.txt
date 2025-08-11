@@ -1,0 +1,21 @@
+CAPITULO 11
+
+OBSOLETOS
+
+¿CUANDO ALGO SE VUELVE OBSOLETO?
+    - Deprecated:  Cuando una función, método o tecnología está oficialmente descontinuada o ya no se recomienda su uso.
+    - Inútil: Cuando el código o herramienta ya no cumple su función o ha dejado de ser relevante.
+    - Con bugs o fallos: Cuando presenta errores conocidos que no se corrigen.
+    - Está por ser reemplazado: Cuando existe una versión nueva o mejor que está próxima a sustituirlo.
+    - Hay mejores formas de hacerlo: Cuando hay métodos más eficientes, seguros o fáciles de mantener.
+
+LOS EFECTOS NEGATIVOS (APLICADO A MÉTODOS, CLASES Y PROPIEDADES)
+    - Uso excesivo de recursos: Puede consumir más memoria, CPU o ancho de banda sin necesidad.
+    - Código con bugs o fallos: Provoca errores o comportamientos inesperados que afectan la experiencia.
+    - Código innecesariamente largo: Hace que el mantenimiento y la comprensión sean más difíciles.
+    - SEO: El uso de tecnologías obsoletas puede afectar negativamente el posicionamiento en buscadores debido a problemas de rendimiento o compatibilidad.
+
+¿COMO VERIFICAR SI ESTÁ OBSOLETO?
+    - 1 de cada 3 webs utilizan librerías de JavaScript obsoletas, lo que demuestra lo común que es este problema.
+    - Verificar si el código usa funciones, métodos, objetos o metodologías que están marcados como obsoletos en la documentación oficial.
+    - Revisar en sitios web basados en estándares oficiales y actualizados para comprobar compatibilidad y vigencia de tecnologías.

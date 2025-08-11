@@ -1,0 +1,9 @@
+CAPITULO 11
+
+PROBLEMA A
+
+"Las mesas de examen ya terminaron y el profesor le tomo un ultimo examen espacial a cofla, ya cofla hizo 2 examen mas, pero lamentablemente se rompio el sistema de inscripciones de las notas, por ende habra que crear una solucion a este problema, desarrollando una web que sea capaz de simular su funcionamiento."
+
+- Intefaz para introducir notas
+- Validar que no hayas errores
+- Si el promedio es mayor 7/10: Aprobado
