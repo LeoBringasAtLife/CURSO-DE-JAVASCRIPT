@@ -6,3 +6,19 @@ CALLBACKS:
 
 - Ejemplos
 - Problemas de los CallBacks
+
+
+Ventajas y Desventajas de trabajar con CallBacks
+
+Ventajas:
+
+- Flexibilidad: Puedes decidir qué hacer en tiempo de ejecución
+- Reutilización: Una función puede ejecutar diferentes acciones
+- Asíncrono: Manejas operaciones que toman tiempo (APIs, archivos)
+- Eventos: Respondes a clicks, cargas, etc.
+
+Desventajas:
+
+- Callback Hell: Callbacks anidados difíciles de leer
+- Manejo de errores: Más complejo
+- Debugging: Harder de debuggear

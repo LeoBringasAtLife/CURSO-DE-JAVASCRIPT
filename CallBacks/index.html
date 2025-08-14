@@ -14,10 +14,96 @@
 </head>
 
 <body>
+
     <script>
-        function prueba(CallBacks) {
-            CallBacks("Nombre")
+
+        // console.log(new Persona("Lucas Dalto", "@SoyDalto")) // Se paso vayan a seguirle JAJAJA, alto spam.
+
+        class Persona {
+            constructor(nombre, instagram) {
+                this.nombre = nombre
+                this.instagram = instagram
+            }
         }
+
+        const data = [
+            ["Lucas Dalto", "@SoyDalto"],
+            ["Leonardo Bringas", "@LeoBringasAtLife"],
+            ["Elon Musk", "@ElonMusk"],
+            ["UsuarioX", "@PersonaX"]
+        ]
+
+        let personas = [];
+
+        for (let i = 0; i < data.length; i++) {
+            personas[i] = new Persona(data[i][0], data[i][1])
+        }
+
+        console.log(personas[0].nombre)
+
+        const obtenerPersona = (id, cb) => {
+            if (personas[id] == undefined) {
+                cb("No se ha encontrado la persona, lo lamentamos", null);
+            } else {
+                cb(null, personas[id])  // Pasar el objeto completo
+            }
+        }
+
+        obtenerPersona(1, (err, persona) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log(persona.nombre);
+                console.log(persona.instagram);
+            }
+        })
+
+
+
+
+        // Un callback es simplemente pasar una función como parámetro a otra función para que la ejecute cuando sea necesario.
+
+        // - Recibe una función como parámetro
+        // function prueba(CallBacks) {
+        //     // - Ejecuta esa función pasándole "Leonardo"
+        //     CallBacks("Leonardo")
+        // }
+
+        // - Es la función que pasas como callback
+        // - Pasas la función
+        // function decirNombre(nombre) {
+        //     console.log(nombre)
+        // }
+
+        // prueba(decirNombre); // Muestra: "Nombre"
+
+
+        // Los callbacks son muy útiles para:
+
+        // Eventos (clicks, cargas, etc.)
+        // Operaciones asíncronas
+        // Funciones de orden superior como map, filter
+
+
+
+
+
+        // function prueba(callback) {
+        //     callback("Roberto");
+        // }
+
+        // prueba(function (nombre) {
+        //     console.log(nombre)
+        // })
+
+        // prueba((nombre) => {
+        //     console.log(nombre)
+        // })
+
+        // prueba((nombre) => console.log(nombre))
+
+        // JavaScript tiene muchas formas elegantes de escribir el mismo código - Segun Claude.AI
+
     </script>
 </body>
 
